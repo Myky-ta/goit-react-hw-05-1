@@ -1,0 +1,138 @@
+/* Глобальні стилі */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #ff4757;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #ffa502;
+}
+
+/* Навігація */
+nav {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #ff4757;
+  border-bottom: 2px solid #ff4757;
+}
+
+/* Список фільмів */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card .title {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Форма пошуку */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.search-form button {
+  background-color: #ff4757;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-form button:hover {
+  background-color: #ffa502;
+}
+
+/* Деталі фільму */
+.movie-details {
+  padding: 1rem;
+}
+
+.movie-details img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.movie-details .info {
+  margin-top: 1rem;
+}
+
+/* Cast & Reviews */
+.cast-list, .review-list {
+  padding: 1rem;
+}
+
+.cast-item, .review-item {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 404 */
+.not-found {
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found a {
+  color: #ff4757;
+  font-weight: bold;
+}
