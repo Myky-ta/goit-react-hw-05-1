@@ -11,12 +11,23 @@ export default function MovieCast() {
   }, [movieId]);
 
   return (
-    <ul>
+    <div className="cast-list">
       {cast.map((actor) => (
-        <li key={actor.cast_id}>
-          {actor.name} as {actor.character}
-        </li>
+        <div key={actor.cast_id} className="cast-item">
+          {actor.profile_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+              alt={actor.name}
+              width="100"
+            />
+          ) : (
+            <div>No photo</div>
+          )}
+          <p><strong>{actor.name}</strong></p>
+          <p>as {actor.character}</p>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
+

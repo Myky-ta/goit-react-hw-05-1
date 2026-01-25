@@ -1,4 +1,4 @@
-/* Глобальні стилі */
+/* ====== Глобальні стилі ====== */
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3 {
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
@@ -22,7 +22,7 @@ a:hover {
   color: #ffa502;
 }
 
-/* Навігація */
+/* ====== Навігація ====== */
 nav {
   background-color: #1e1e1e;
   padding: 1rem;
@@ -40,7 +40,7 @@ nav a.active {
   border-bottom: 2px solid #ff4757;
 }
 
-/* Список фільмів */
+/* ====== Список фільмів ====== */
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -53,6 +53,9 @@ nav a.active {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .movie-card:hover {
@@ -62,7 +65,9 @@ nav a.active {
 
 .movie-card img {
   width: 100%;
-  display: block;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
 }
 
 .movie-card .title {
@@ -71,19 +76,28 @@ nav a.active {
   font-size: 1rem;
 }
 
-/* Форма пошуку */
+/* ====== Форма пошуку ====== */
 .search-form {
   display: flex;
   gap: 0.5rem;
   margin: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .search-form input {
-  flex: 1;
+  flex: 1 1 300px;
   padding: 0.5rem;
   border-radius: 6px;
   border: none;
   outline: none;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  font-size: 1rem;
+}
+
+.search-form input::placeholder {
+  color: #888;
 }
 
 .search-form button {
@@ -94,39 +108,53 @@ nav a.active {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
+  font-size: 1rem;
 }
 
 .search-form button:hover {
   background-color: #ffa502;
 }
 
-/* Деталі фільму */
+/* ====== Деталі фільму ====== */
 .movie-details {
   padding: 1rem;
 }
 
 .movie-details img {
   max-width: 300px;
+  height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .movie-details .info {
   margin-top: 1rem;
 }
 
-/* Cast & Reviews */
+/* ====== Cast & Reviews ====== */
 .cast-list, .review-list {
   padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
 }
 
 .cast-item, .review-item {
   background-color: #1e1e1e;
   border-radius: 6px;
   padding: 0.75rem;
+  text-align: center;
+}
+
+.cast-item img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
   margin-bottom: 0.5rem;
 }
 
-/* 404 */
+/* ====== 404 ====== */
 .not-found {
   text-align: center;
   padding: 2rem;
@@ -135,4 +163,20 @@ nav a.active {
 .not-found a {
   color: #ff4757;
   font-weight: bold;
+}
+
+/* ====== Адаптивність ====== */
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
 }
